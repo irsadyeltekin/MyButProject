@@ -12,14 +12,7 @@ android {
     }
 
     signingConfigs {
-        config
         config {
-            keyAlias 'key0'
-            keyPassword 'sevenfold'
-            storeFile file('/Users/sedakeskin/Desktop/KeyFolder/keystore.jks')
-            storePassword 'sevenfold'
-        }
-        config1 {
             keyAlias 'key0'
             keyPassword 'sevenfold'
             storeFile file('/Users/sedakeskin/Desktop/KeyFolder/keystore.jks')
@@ -35,10 +28,13 @@ android {
             signingConfig signingConfigs.config
         }
         debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '.debug'
+            debuggable true
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-debug-rules.pro'
-            signingConfig signingConfigs.config1
+            signingConfig signingConfigs.config
         }
     }
 
