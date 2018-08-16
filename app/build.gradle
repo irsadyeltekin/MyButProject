@@ -19,6 +19,12 @@ android {
             storeFile file('/Users/sedakeskin/Desktop/KeyFolder/keystore.jks')
             storePassword 'sevenfold'
         }
+        config1 {
+            keyAlias 'key0'
+            keyPassword 'sevenfold'
+            storeFile file('/Users/sedakeskin/Desktop/KeyFolder/keystore.jks')
+            storePassword 'sevenfold'
+        }
     }
 
     buildTypes {
@@ -32,6 +38,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-debug-rules.pro'
+            signingConfig signingConfigs.config1
         }
     }
 
